@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Creative Journey</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    
+    <style>
+        /* --- Base Styles (Mobile-First) --- */
+        body {
+            background-color: rgb(24, 1, 65);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* The main container for the text and image */
+        .content-container {
+            display: flex;
+            flex-direction: column; /* Stack items vertically for mobile view */
+            align-items: center; /* Center items horizontally */
+            text-align: center;
+            gap: 40px; /* Adds space between the text and image sections */
+        }
+
+        /* Styling for the text content */
+        .text-content {
+            padding: 20px 0;
+        }
+
+        .text-content h1 {
+            color: white;
+            font-size: 2.5em;
+            margin: 0 0 5px 0;
+        }
+
+        .text-content h2 {
+            color: rgb(53, 184, 236);
+            font-size: 1.5em;
+            margin: 0;
+        }
+        
+        .text-content .fs {
+            color: white; /* Make "Full Stack Developer" white */
+            font-size: 1.2em; /* Smaller font size for a subheading */
+        }
+
+        /* Styling for the image */
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            width: 180px;
+            border: 3px solid rgb(104, 199, 236);
+            border-radius: 5%;
+            box-shadow: 10px 10px 15px rgba(9, 171, 235, 0.3);
+        }
+
+        /* Styling for the "About Me" button */
+        .about-me-button {
+            display: inline-block;
+            background: linear-gradient(to right, rgb(9, 171, 235), rgb(233, 115, 194));
+            border: 3px solid rgb(12, 109, 236);
+            color: rgb(14, 13, 13);
+            font-size: 25px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 30px;
+            box-shadow: 10px 10px 15px rgba(16, 212, 147, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .about-me-button:hover {
+            color: purple;
+            transform: scale(1.05);
+        }
+
+        /* --- Desktop Styles (using a media query) --- */
+        @media (min-width: 768px) {
+            .content-container {
+                flex-direction: row; /* Switch to horizontal layout for desktop */
+                justify-content: center; /* Center the entire block */
+                align-items: center; /* Vertically align items */
+                min-height: 100vh; /* Make it fill the screen height */
+                max-width: 1200px;
+                margin: 0 auto;
+                text-align: left; /* Align text to the left */
+            }
+
+            .text-content {
+                text-align: left;
+            }
+
+            .image-container {
+                /* Add a bit of spacing on the left of the image */
+                margin-left: 50px;
+            }
+
+            .about-me-button {
+                margin-top: 20px; /* Adjust margin for a tighter layout */
+            }
+        }
+    </style>
+</head>
+<body style="background-color: rgb(24, 1, 65);">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    
+    <main class="content-container">
+        <div class="text-content" data-aos="zoom-out" data-aos-delay="300" data-aos-duration="3000">
+            <h1>Hi, I'm Tamil Selvi</h1>
+            <h2 class="p" data-aos="zoom-out" data-aos-delay="400" data-aos-duration="3000">Python</h2>
+            <h2 class="fs" data-aos="zoom-out" data-aos-delay="400" data-aos-duration="3000">Full Stack Developer</h2>
+            <a href="about.html" class="about-me-button" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">About Me</a>
+        </div>
+        
+        <div class="image-container">
+            <img src="Tamil.jpeg" alt="Tamil" class="a" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000">
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamilselvi's Portfolio</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        /* --- Base Styles (Mobile-First) --- */
+        body {
+            background-color: rgb(24, 1, 65);
+            color: aliceblue;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #0097a7;
+            border-bottom: 5px solid #b0bec0;
+            display: inline-block;
+            padding-bottom: 5px;
+            letter-spacing: 2px;
+            font-size: 1.8em;
+        }
+
+        section {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Home Button */
+        .home-button {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .home-button a {
+            border: 3px solid skyblue;
+            width: 100px;
+            text-align: center;
+            font-size: 25px;
+            color: crimson;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* About Me Section */
+        .about-me-section .section-title {
+            margin-bottom: 30px;
+        }
+
+        .about-me-card {
+            background-color: #0097a7;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .about-me-card .greeting {
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(24, 1, 65);
+        }
+
+        .about-me-card .bio {
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        /* Project Section */
+        .projects-section {
+            margin-top: 50px;
+        }
+
+        .project-card-container {
+            display: flex;
+            flex-direction: column; /* Stacks projects vertically on mobile */
+            gap: 40px; /* Space between project cards */
+            margin-top: 30px;
+        }
+
+        .project-card {
+            background-color: #0097a7;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            position: relative; /* For image positioning if needed */
+        }
+
+        .project-card h3 {
+            color: darkblue;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+
+        .project-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .project-card li {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .project-image-wrapper {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 25px;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(to right, rgb(9, 171, 235), rgb(233, 115, 194));
+            color: rgb(14, 13, 13);
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 20px 0;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .project-link:hover {
+            background-color: white;
+            color: #ff4f81;
+            border: 2px solid #ff4f81;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            margin-top: 50px;
+        }
+
+        .skills-card {
+            background-color: #0097a7;
+            color: white;
+            padding: 30px;
+            border-radius: 50%;
+            height: 350px;
+            width: 350px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .skills-card p {
+            font-size: 1.2em;
+            line-height: 1.8;
+        }
+
+        .skills-card ul {
+            list-style-type: none;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        .skills-image-wrapper {
+            margin-top: 20px;
+        }
+
+        .skills-image {
+            max-width: 150px;
+            height: auto;
+            border-radius: 20%;
+            opacity: 0.8;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin-top: 50px;
+        }
+
+        .contact-card {
+            background-color: #0097a7;
+            color: white;
+            padding: 30px;
+            border-radius: 20px 0;
+            text-align: center;
+        }
+
+        .contact-card p {
+            line-height: 2;
+            font-size: 1.2em;
+        }
+
+        /* --- Desktop View: Media Queries --- */
+        @media (min-width: 768px) {
+            body {
+                padding: 50px;
+            }
+
+            /* About Me Section */
+            .about-me-card {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            /* Projects Section */
+            .project-card-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px;
+            }
+            
+            .project-card {
+                height: auto;
+            }
+            
+            .project-card h3 {
+                min-height: 60px; /* Adjust as needed for consistent card height */
+            }
+
+            /* Skills Section */
+            .skills-section {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .skills-card {
+                width: 45%;
+                height: auto;
+                border-radius: 10px;
+            }
+
+            /* Contact Section */
+            .contact-card {
+                max-width: 500px;
+                margin: 0 auto;
+                color: rgb(24, 1, 65);
+            }
+        }
+        @media (min-width: 768px) {
+    /* ... existing desktop CSS rules ... */
+    
+    .zt-image img {
+        height: 350px;
+        width: 300px;
+    }
+}
+    </style>
+</head>
+<body style="background-color: rgb(24, 1, 65);">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    
+    <div class="home-button" data-aos="fade-down">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    </div>
+
+    <section class="about-me-section">
+        <div class="section-title" data-aos="zoom-in">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-me-card" data-aos="zoom-out" data-aos-delay="300">
+            <p class="greeting" data-aos="zoom-out">Hello and thanks for visiting!</p>
+            <p class="bio" data-aos="zoom-out">
+                I'm a passionate fresher embarking on my journey as a Python full-stack developer.
+                My portfolio showcases my dedication to learning and my ability to craft solutions using Python, the
+                Django framework and essential front-end tools. I'm excited to grow my skills and contribute to innovative projects.
+            </p>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="section-title" data-aos="zoom-in">
+            <h2>PROJECTS</h2>
+        </div>
+        <p class="section-description" data-aos="zoom-in">
+            Here are a few projects I have created while learning full-stack development.
+        </p>
+
+        <div class="project-card-container">
+            <div class="project-card" data-aos="fade-up">
+                <h3>INTERACTIVE PETS STORIES WEBSITE (FRONTEND)</h3>
+                <ul>
+                    <li data-aos="zoom-out">Developed a responsive web application using <strong>HTML, CSS,
+                        and JavaScript</strong> to create an engaging user interface for displaying pet stories.</li>
+                    <li data-aos="zoom-out">Implemented dynamic content loading and ensured an appealing user experience across various devices.</li>
+                </ul>
+                <a href="https://tamilselvi-dev.github.io/my-web/" class="project-link" data-aos="zoom-out">View Project</a>
+                <div class="project-image-wrapper"><img src="pet.jpeg" alt="pet" class="project-image"></div>
+            </div>
+          <div class="project-card" data-aos="fade-up">
+    <h3>ZARA TECHNOLOGY – Client Project</h3>
+    <ul>
+        <li data-aos="zoom-out">Designed and developed a responsive technology services website.</li>
+        <li data-aos="zoom-out">Implemented cross-device compatibility using HTML, CSS, and JavaScript.</li>
+        <li data-aos="zoom-out">Delivered within the client’s requirements and timeline.</li>
+    </ul>
+    <a href="https://tamilselvi-dev.github.io/ZARATECHNOLOGY/" class="project-link" data-aos="zoom-out">View Project</a>
+    <div class="project-image-wrapper zt-image">
+        <img src="zt.jpeg" alt="ZARA TECHNOLOGY website screenshot" class="project-image">
+    </div>
+</div>
+
+            <div class="project-card" data-aos="fade-up">
+                <h3>ATM TRANSACTION SYSTEM</h3>
+                <ul>
+                    <li data-aos="zoom-out">Created a <strong>Python</strong> program simulating core ATM operations (secure user access, balance management, transaction types).</li>
+                    <li data-aos="zoom-out">Focused on practical application of fundamental Python statements and methods, incorporating robust input validation for real-world problem-solving.</li>
+                </ul>
+                <div class="project-image-wrapper"><img src="atm.jpeg" alt="atm" class="project-image"></div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up">
+                <h3>ONLINE FOOD ORDERING SYSTEM</h3>
+                <ul>
+                    <li data-aos="zoom-out">Developed a comprehensive <strong>python</strong> program for online food ordering, including menu selection, order processing, and automated bill generation.</li>
+                    <li data-aos="zoom-out">Utilized fundamental Python statements, functions, and modules, with file handling for efficient record-keeping.</li>
+                </ul>
+                <div class="project-image-wrapper"><img src="of.jpeg" alt="food" class="project-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section">
+        <div class="section-title" data-aos="zoom-in">
+            <h2>TECHNICAL SKILLS</h2>
+        </div>
+        <div class="skills-card tech-skills-card" data-aos="fade-up">
+            <p data-aos="fade-up">
+                FRONTEND: HTML5, CSS3, JavaScript, JQuery, Bootstrap<br>
+                BACKEND: Python, Django<br>
+                Databases: MySQL<br>
+                Version Control: GitHub<br>
+                Tools: Visual Studio Code, PyCharm
+            </p>
+            <div class="skills-image-wrapper"><img src="codes.jpeg" alt="code" class="skills-image"></div>
+        </div>
+
+        <div class="section-title" data-aos="zoom-in">
+            <h2>PROCESS SKILLS</h2>
+        </div>
+        <div class="skills-card process-skills-card" data-aos="fade-up">
+            <p data-aos="fade-up">I have a foundational understanding of modern software development practices and lifecycle models.</p>
+            <ul data-aos="fade-up">
+                <li>Agile Ceremonies</li>
+                <li>Sprint Planning & Execution</li>
+                <li>SDLC (Software Development Life Cycle)</li>
+                <li>STLC (Software Testing Life Cycle)</li>
+            </ul>
+            <div class="skills-image-wrapper"><img src="tools.jpeg" alt="tools" class="skills-image"></div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="section-title" data-aos="zoom-in">
+            <h2>CONTACT US</h2>
+        </div>
+        <div class="contact-card" data-aos="fade-up">
+            <p data-aos="fade-up">
+                <i class="fa-solid fa-envelope"></i> tamilselvi.fsdev@gmail.com<br>
+                <i class="fa-solid fa-phone"></i> +91 9345334541<br>
+                <i class="fa-solid fa-location-dot"></i> Salem, Tamil Nadu
+            </p>
+        </div>
+    </section>
+</body>
+</html>
